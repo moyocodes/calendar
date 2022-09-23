@@ -13,14 +13,19 @@ function App() {
     new Date('August 21, 2022 23:15:30'),
     new Date('August 22, 2022 23:15:30'), // Aug, 7th
  ]
-  // const disableDates = new Date('August 20, 2022 23:15:30');
+ 
+ const base = Array.from({length: 32}, (v, i) => i)
+
+ const excluded_dates = base.filter((dg) => dg != 20 && dg != 21 && dg != 22)
+  // const disableDates = new Date('Sep 20 2022 00:00:00 GMT+0100');
   // const date1=disableDates.getDate();
 return(
 <div className="calendar">
 <Calendar
  tileDisabled={({date}) => {
-  
-  return disableDates.find(element => date.getDate() === element.getDate() );}}
+  return excluded_dates.find(element => date.getDate() === element)
+ }  
+ }
 />
 </div>
 )
