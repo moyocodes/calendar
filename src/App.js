@@ -17,6 +17,7 @@ function App() {
  const base = Array.from({length: 32}, (v, i) => i)
 
  const excluded_dates = base.filter((dg) => dg != 20 && dg != 21 && dg != 22)
+ 
   // const disableDates = new Date('Sep 20 2022 00:00:00 GMT+0100');
   // const date1=disableDates.getDate();
 return(
